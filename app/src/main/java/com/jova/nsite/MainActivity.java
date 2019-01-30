@@ -119,9 +119,16 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             myWebView.loadUrl("http://nsite.co.in/login.html");
         } else if (id == R.id.nav_share) {
-            myWebView.loadUrl("http://nsite.co.in/events.html");
+            Intent i=new Intent(android.content.Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(android.content.Intent.EXTRA_SUBJECT,"NSITE 2k19");
+            i.putExtra(android.content.Intent.EXTRA_TEXT, "http://nsite.co.in/");
+            startActivity(Intent.createChooser(i,"Share via"));
         } else if (id == R.id.nav_send) {
-            myWebView.loadUrl("http://nsite.co.in/events.html");
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"toaddress@gmail.com"});
+            intent.setType("plain/text");
+            startActivity(Intent.createChooser(intent, ""));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
