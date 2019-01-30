@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
                 */
                 Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"toaddress@gmail.com"});
                 intent.setType("plain/text");
                 startActivity(Intent.createChooser(intent, ""));
             }
@@ -103,16 +104,17 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            myWebView.loadUrl("http://nsite.co.in/events.html");
         } else if (id == R.id.nav_gallery) {
-
+            myWebView.loadUrl("http://nsite.co.in/news.html");
         } else if (id == R.id.nav_slideshow) {
-
+            myWebView.loadUrl("http://nsite.co.in/about.html");
         } else if (id == R.id.nav_manage) {
-
+            myWebView.loadUrl("http://nsite.co.in/login.html");
         } else if (id == R.id.nav_share) {
-
+            myWebView.loadUrl("http://nsite.co.in/events.html");
         } else if (id == R.id.nav_send) {
-
+            myWebView.loadUrl("http://nsite.co.in/events.html");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
