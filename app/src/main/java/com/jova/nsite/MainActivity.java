@@ -89,7 +89,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.contact | id == R.id.about) {
+        if (id == R.id.contact) {
+            Intent i = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(i);
+            return true;
+        }
+        else if (id == R.id.about) {
+            Intent i = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(i);
             return true;
         }
 
